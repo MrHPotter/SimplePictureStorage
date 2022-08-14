@@ -47,8 +47,8 @@ public class PictureController : ControllerBase
         return fileName;
     }
 
-    [HttpGet]
-    public FileStreamResult GetImage(string name)
+    [HttpGet("{name}")]
+    public FileStreamResult GetImage([FromRoute] string name)
     {
         FileStream? result = null;
         try
